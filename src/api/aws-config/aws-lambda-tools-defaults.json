@@ -8,8 +8,8 @@
   "profile": "",
   "region": "",
   "configuration": "Release",
-  "s3-prefix": "gav/",
-  "template": "serverless.template",
+  "s3-prefix": "foo-auth-service/",
+  "template": "aws-config/serverless.template",
   "template-parameters": "",
   "s3-bucket": ""
 }

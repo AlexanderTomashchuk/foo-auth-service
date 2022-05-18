@@ -49,12 +49,12 @@ If already installed check if new version is available.
 
 Execute unit tests
 ```
-    cd "gav/test/gav.Tests"
+    cd "test/api.tests"
     dotnet test
 ```
 
 Deploy application
 ```
-    cd "gav/src/gav"
+    cd "src/api"
     dotnet lambda deploy-serverless
 ```
