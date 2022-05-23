@@ -7,6 +7,7 @@ nuget Fake.Core.Target //"
 
 // Dependencies
 open Fake.Core
+open Fake.Core.TargetOperators
 open Fake.DotNet
 open Fake.IO
 open Fake.IO.Globbing.Operators
@@ -27,19 +28,15 @@ Target.create "Build" (fun _ -> !!projPaths |> Seq.iter (DotNet.build id))
 Target.create "Test" (fun _ -> !!testProjPaths |> Seq.iter (DotNet.test id))
 
 Target.create "Deploy" (fun _ ->
-  let withWorkingDir path =
-    DotNet.Options.withWorkingDirectory path
+    let withWorkingDir path =
+        DotNet.Options.withWorkingDirectory path
 
-  DotNet.exec
-    (withWorkingDir apiProjPath)
-    "lambda deploy-function"
-    ("-cfg " + awsConfigPath)
-  |> ignore
+    DotNet.exec (withWorkingDir apiProjPath) "lambda deploy-function" ("-cfg " + awsConfigPath)
+    |> ignore
 
-  Trace.trace "Deployment process is finished")
+    Trace.trace "Deployment process is finished")
 
-//"Clean" ==> "Build" ==> "Test" ==>
-"Deploy"
+"Clean" ==> "Build" ==> "Test" ==> "Deploy"
 
 // Start
 Target.runOrDefault "Deploy"
