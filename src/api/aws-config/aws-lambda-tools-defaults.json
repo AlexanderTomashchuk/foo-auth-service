@@ -8,8 +8,14 @@
   "profile": "",
   "region": "",
   "configuration": "Release",
-  "s3-prefix": "foo-auth-service/",
-  "template": "aws-config/serverless.template",
+  "template": "serverless.template",
   "template-parameters": "",
+  "function-name": "foo-auth-service",
+  "function-runtime": "dotnet6",
+  "function-memory-size": 256,
+  "function-timeout": 10,
+  "function-handler": "api::Setup+LambdaEntryPoint::FunctionHandlerAsync",
+  "function-url-enable": true,
+  "s3-prefix": "foo-auth-service/",
   "s3-bucket": ""
 }

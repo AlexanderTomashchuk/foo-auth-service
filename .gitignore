@@ -351,3 +351,10 @@ MigrationBackup/
 
 #Rider idea files
 .idea/
+
+#Paket dependency manager
+.paket/
+paket-files/
+
+#Lock files
+*.lock

@@ -8,7 +8,7 @@
     "AspNetCoreFunction": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "foo-auth-service::Setup+LambdaEntryPoint::FunctionHandlerAsync",
+        "Handler": "api::Setup+LambdaEntryPoint::FunctionHandlerAsync",
         "Runtime": "dotnet6",
         "CodeUri": "",
         "MemorySize": 256,

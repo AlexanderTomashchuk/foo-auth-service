@@ -16,7 +16,7 @@
     <ItemGroup>
         <None Include="aws-config\serverless.template"/>
         <None Include="aws-config\aws-lambda-tools-defaults.json"/>
-        <!--        <None Include="Readme.md"/>-->
+        <None Include="Readme.md"/>
         <Compile Include="AppHandlers.fs"/>
         <Compile Include="Setup.fs"/>
     </ItemGroup>
